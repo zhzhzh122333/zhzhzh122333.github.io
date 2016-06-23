@@ -1,5 +1,7 @@
-ping 127.0.0.1
+HelloWorld
 
-ping 127.0.0.1
+What the Fuck
 
-shutdown -s -t 3600
+What's up
+
+good bye
