@@ -1,1 +1,1 @@
-exit
+shutdown -s -t 3600
