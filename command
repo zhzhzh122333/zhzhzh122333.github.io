@@ -1,1 +1,1 @@
-shutdown
+mkdir D:\hello
