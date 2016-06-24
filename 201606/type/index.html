@@ -5,7 +5,7 @@
   
 
 
-<html class="theme-next muse use-motion">
+<html class="theme-next pisces use-motion">
 <head>
   <meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
@@ -49,13 +49,19 @@
   
 
   
+    
+      
+    
+
+    
+  
 
   
 
   
     
     
-    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic|Lobster Two:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
   
 
 
@@ -90,7 +96,7 @@
 <meta property="og:url" content="http://localhost:4000/201606/type/index.html">
 <meta property="og:site_name" content="Good Luck & Have Fun">
 <meta property="og:description" content="Typing Test">
-<meta property="og:updated_time" content="2016-06-22T09:48:48.319Z">
+<meta property="og:updated_time" content="2016-06-23T06:43:42.650Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Typing Test">
 <meta name="twitter:description" content="Typing Test">
@@ -100,7 +106,7 @@
 <script type="text/javascript" id="hexo.configuration">
   var NexT = window.NexT || {};
   var CONFIG = {
-    scheme: 'Muse',
+    scheme: 'Pisces',
     sidebar: {"position":"left","display":"post"},
     fancybox: true,
     motion: true,
@@ -308,7 +314,6 @@
 	<script src="/scripts/word.js"></script>
 	<style>
 		.inputText{
-			height: 310px;
 			font-size: 20px;
 			background-color: white;
 			border: #DDDDDD 1px solid;
@@ -445,6 +450,8 @@
                 previewText.html(str.substring(str.indexOf(" ") + 1));
                 currentText.html(str.substring(0, str.indexOf(" ")));
                 return false;
+            } else if (e.keyCode == 27) {
+                restart();
             }
         }
         
@@ -540,8 +547,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/201606/mypage/" rel="next" title="My Page">
-                <i class="fa fa-chevron-left"></i> My Page
+              <a href="/201606/hello-world/" rel="next" title="Hello World">
+                <i class="fa fa-chevron-left"></i> Hello World
               </a>
             
           </div>
@@ -618,7 +625,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">4</span>
+              <span class="site-state-item-count">5</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -626,7 +633,7 @@
           
             <div class="site-state-item site-state-categories">
               <a href="/categories">
-                <span class="site-state-item-count">2</span>
+                <span class="site-state-item-count">3</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -635,7 +642,7 @@
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">4</span>
+                <span class="site-state-item-count">7</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -708,7 +715,7 @@
 <div class="theme-info">
   主题 -
   <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
-    NexT.Muse
+    NexT.Pisces
   </a>
 </div>
 
@@ -773,6 +780,13 @@
 
   
   
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.0.1"></script>
+
+
 
   
   <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
