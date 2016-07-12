@@ -1,0 +1,652 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic|Lobster Two:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Linux,MySQL," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1" />
+
+
+
+
+
+
+<meta name="description" content="系统：CentOS 6.5桌面版版本：MySQL 5.6.25
+
+删除自带mysql执行以下命令，注意大小写，如果mysql不行就换MySQL12rpm  -qa | grep  mysqlrpm -e --nodeps [包名]
+卸载后原mysql中的数据及配置不会删除，如果确定没用后就手工删除12rm -f /usr/my.cnfrm -Rf /var/lib/mysql
+如图">
+<meta property="og:type" content="article">
+<meta property="og:title" content="CentOS下安装MySQL">
+<meta property="og:url" content="http://localhost:4000/201606/mysql-init/index.html">
+<meta property="og:site_name" content="Good Luck & Have Fun">
+<meta property="og:description" content="系统：CentOS 6.5桌面版版本：MySQL 5.6.25
+
+删除自带mysql执行以下命令，注意大小写，如果mysql不行就换MySQL12rpm  -qa | grep  mysqlrpm -e --nodeps [包名]
+卸载后原mysql中的数据及配置不会删除，如果确定没用后就手工删除12rm -f /usr/my.cnfrm -Rf /var/lib/mysql
+如图">
+<meta property="og:image" content="http://localhost:4000/images/mysql-init/1.png">
+<meta property="og:image" content="http://localhost:4000/images/mysql-init/2.png">
+<meta property="og:image" content="http://localhost:4000/images/mysql-init/3.png">
+<meta property="og:image" content="http://localhost:4000/images/mysql-init/4.png">
+<meta property="og:image" content="http://localhost:4000/images/mysql-init/5.png">
+<meta property="og:image" content="http://localhost:4000/images/mysql-init/6.png">
+<meta property="og:image" content="http://localhost:4000/images/mysql-init/7.png">
+<meta property="og:image" content="http://localhost:4000/images/mysql-init/8.png">
+<meta property="og:updated_time" content="2016-07-12T06:54:45.524Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="CentOS下安装MySQL">
+<meta name="twitter:description" content="系统：CentOS 6.5桌面版版本：MySQL 5.6.25
+
+删除自带mysql执行以下命令，注意大小写，如果mysql不行就换MySQL12rpm  -qa | grep  mysqlrpm -e --nodeps [包名]
+卸载后原mysql中的数据及配置不会删除，如果确定没用后就手工删除12rm -f /usr/my.cnfrm -Rf /var/lib/mysql
+如图">
+<meta name="twitter:image" content="http://localhost:4000/images/mysql-init/1.png">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 0,
+      author: '博主'
+    }
+  };
+</script>
+
+  <title> CentOS下安装MySQL | Good Luck & Have Fun </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">Good Luck & Have Fun</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle"></p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                CentOS下安装MySQL
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-06-29T10:45:36+08:00" content="2016-06-29">
+              2016-06-29
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/MySQL/" itemprop="url" rel="index">
+                    <span itemprop="name">MySQL</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <blockquote>
+<p>系统：CentOS 6.5桌面版<br>版本：MySQL 5.6.25</p>
+</blockquote>
+<h2 id="删除自带mysql"><a href="#删除自带mysql" class="headerlink" title="删除自带mysql"></a>删除自带mysql</h2><p>执行以下命令，注意大小写，如果mysql不行就换MySQL<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">rpm  -qa | grep  mysql</span><br><span class="line">rpm -e --nodeps [包名]</span><br></pre></td></tr></table></figure></p>
+<p>卸载后原mysql中的数据及配置不会删除，如果确定没用后就手工删除<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">rm -f /usr/my.cnf</span><br><span class="line">rm -Rf /var/lib/mysql</span><br></pre></td></tr></table></figure></p>
+<p>如图<br><img src="/images/mysql-init/1.png" title="删除mysql"></p>
+<a id="more"></a>
+<h2 id="下载并解压mysql安装包"><a href="#下载并解压mysql安装包" class="headerlink" title="下载并解压mysql安装包"></a>下载并解压mysql安装包</h2><p>执行以下命令<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">mkdir mysql</span><br><span class="line">tar -xvf MySQL-5.6.25-1.linux_glibc2.5.x86_64.rpm-bundle.tar -C ./mysql/</span><br><span class="line">cd mysql</span><br></pre></td></tr></table></figure></p>
+<p>如图<br><img src="/images/mysql-init/2.png" title="解压mysql安装包"></p>
+<h2 id="安装mysql"><a href="#安装mysql" class="headerlink" title="安装mysql"></a>安装mysql</h2><p>一般安装server和client即可，其他可根据需要安装<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rpm -ivh MySQL-server-5.6.25-1.linux_glibc2.5.x86_64.rpm</span><br></pre></td></tr></table></figure></p>
+<p>如图<br><img src="/images/mysql-init/3.png" title="安装mysql"><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">rpm -ivh MySQL-client-5.6.25-1.linux_glibc2.5.x86_64.rpm</span><br><span class="line">rpm -ivh MySQL-devel-5.6.25-1.linux_glibc2.5.x86_64.rpm</span><br><span class="line">rpm -ivh MySQL-shared-compat-5.6.25-1.linux_glibc2.5.x86_64.rpm</span><br></pre></td></tr></table></figure></p>
+<p>如图<br><img src="/images/mysql-init/4.png" title="安装mysql"></p>
+<h2 id="修改mysql默认字符编码"><a href="#修改mysql默认字符编码" class="headerlink" title="修改mysql默认字符编码"></a>修改mysql默认字符编码</h2><p>编辑mysql配置文件/usr/my.cnf，加入以下内容<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">[client]</span><br><span class="line">default-character-set=utf8</span><br><span class="line">[mysqld]</span><br><span class="line">character-set-server=utf8</span><br></pre></td></tr></table></figure></p>
+<p>如图<br><img src="/images/mysql-init/5.png" title="安装mysql"></p>
+<h2 id="初始化数据库"><a href="#初始化数据库" class="headerlink" title="初始化数据库"></a>初始化数据库</h2><p>执行以下命令<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/usr/bin/mysql_install_db</span><br></pre></td></tr></table></figure></p>
+<p>如图<br><img src="/images/mysql-init/6.png" title="初始化数据库"></p>
+<h2 id="运行mysql，并修改密码"><a href="#运行mysql，并修改密码" class="headerlink" title="运行mysql，并修改密码"></a>运行mysql，并修改密码</h2><p>先开启mysql服务，mysql的初始密码在/root/.mysql_secret文件内，执行以下命令<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">service mysql start</span><br><span class="line">cat /root/.mysql_secret</span><br><span class="line">mysql -uroot -pp6_lTG87T5z5nuTe</span><br></pre></td></tr></table></figure></p>
+<p>进入mysql命令行后，修改密码<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">set password = password(&apos;123456&apos;);</span><br></pre></td></tr></table></figure></p>
+<p>如图<br><img src="/images/mysql-init/7.png" title="运行并修改密码"></p>
+<h2 id="设置允许远程登录"><a href="#设置允许远程登录" class="headerlink" title="设置允许远程登录"></a>设置允许远程登录</h2><p>在mysql命令行下执行<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">use mysql;</span><br><span class="line">select host,user,password,password_expired from user;</span><br><span class="line">update user set password = password(&apos;123456&apos;) where user = &apos;root&apos;;</span><br><span class="line">update user set password_expired = &apos;N&apos; where user = &apos;root&apos;;</span><br><span class="line">update user set host = &apos;%&apos; where user = &apos;root&apos; and host = &apos;localhost&apos;;</span><br><span class="line">flush privileges;</span><br><span class="line">exit</span><br></pre></td></tr></table></figure></p>
+<p>如图<br><img src="/images/mysql-init/8.png" title="设置允许远程登录"></p>
+<h2 id="附录"><a href="#附录" class="headerlink" title="附录"></a>附录</h2><p>如果遇到下面这个错误<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ERROR 1820 (HY000): You must SET PASSWORD before executing this statement</span><br></pre></td></tr></table></figure></p>
+<p>先设置密码，再执行查询<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">set password = password(&apos;123456&apos;);</span><br></pre></td></tr></table></figure></p>
+
+      
+    </div>
+
+    <div>
+      
+        
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Linux/" rel="tag">#Linux</a>
+          
+            <a href="/tags/MySQL/" rel="tag">#MySQL</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/201606/java-file/" rel="next" title="Java处理文件">
+                <i class="fa fa-chevron-left"></i> Java处理文件
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/person.png"
+               alt="zzz" />
+          <p class="site-author-name" itemprop="name">zzz</p>
+          <p class="site-description motion-element" itemprop="description"></p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">6</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">4</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">9</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/zhzhzh122333" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#删除自带mysql"><span class="nav-number">1.</span> <span class="nav-text">删除自带mysql</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#下载并解压mysql安装包"><span class="nav-number">2.</span> <span class="nav-text">下载并解压mysql安装包</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装mysql"><span class="nav-number">3.</span> <span class="nav-text">安装mysql</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#修改mysql默认字符编码"><span class="nav-number">4.</span> <span class="nav-text">修改mysql默认字符编码</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#初始化数据库"><span class="nav-number">5.</span> <span class="nav-text">初始化数据库</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#运行mysql，并修改密码"><span class="nav-number">6.</span> <span class="nav-text">运行mysql，并修改密码</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#设置允许远程登录"><span class="nav-number">7.</span> <span class="nav-text">设置允许远程登录</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#附录"><span class="nav-number">8.</span> <span class="nav-text">附录</span></a></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">zzz</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.0.1"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+  
+  
+  
+
+  
+
+  
+
+</body>
+</html>
