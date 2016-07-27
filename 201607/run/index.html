@@ -96,7 +96,7 @@
 <meta property="og:url" content="http://localhost:4000/201607/run/index.html">
 <meta property="og:site_name" content="Good Luck & Have Fun">
 <meta property="og:description" content="Run for your life">
-<meta property="og:updated_time" content="2016-07-25T08:47:54.505Z">
+<meta property="og:updated_time" content="2016-07-25T09:30:37.526Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Running">
 <meta name="twitter:description" content="Run for your life">
@@ -317,7 +317,7 @@
     var word = "run";
     var isRunning = true;
     var currentRun = 0;
-    var totalRun = 5000;
+    var totalRun = 1000;
     var runModel = "g";
     var blank = getBlank();
     var runBox = document.getElementById("runBox");
@@ -332,6 +332,11 @@
         return blank;
     }
     
+    function start() {
+        isRunning = true;
+        run();
+    }
+    
     function pause() {
         isRunning = false;
     }
@@ -343,7 +348,8 @@
         if (runModel == "s") {
             label.innerHTML = blank[i/n%2 >= 1 ? n-i%n : i%n] + word + "<br>";
         } else if (runModel == "g") {
-            label.innerHTML = blank[i/10%2 >= 1 ? 100-Math.pow(i%10,2) : 100-Math.pow(10-i%10,2)] + word + "<br>";
+            var j = Math.sqrt(n);
+            label.innerHTML = blank[i/j%2 >= 1 ? n-Math.pow(i%j,2) : n-Math.pow(j-i%j,2)] + word + "<br>";
         }
         runBox.appendChild(label);
         runBottom.scrollIntoView(false);
