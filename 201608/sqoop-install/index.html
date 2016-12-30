@@ -74,7 +74,7 @@
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Fun," />
+  <meta name="keywords" content="Linux,sqoop," />
 
 
 
@@ -90,16 +90,22 @@
 
 
 
-<meta name="description" content="Typing Test">
+<meta name="description" content="系统：CentOS 6.5桌面版版本：Sqoop 1.4.6
+
+下载并解压下载Sqoop，这里下载的版本是sqoop-1.4.6.bin__hadoop-2.0.4-alpha.tar.gz1234tar zxvf sqoop-1.4.6.bin__hadoop-2.0.4-alpha.tar.gzmv sqoop-1.4.6.bin__hadoop-2.0.4-alpha /env/cd /e">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Typing Test">
-<meta property="og:url" content="http://localhost:4000/201606/type/index.html">
+<meta property="og:title" content="CentOS下安装Sqoop">
+<meta property="og:url" content="http://localhost:4000/201608/sqoop-install/index.html">
 <meta property="og:site_name" content="Good Luck & Have Fun">
-<meta property="og:description" content="Typing Test">
-<meta property="og:updated_time" content="2016-12-30T11:09:34.141Z">
+<meta property="og:description" content="系统：CentOS 6.5桌面版版本：Sqoop 1.4.6
+
+下载并解压下载Sqoop，这里下载的版本是sqoop-1.4.6.bin__hadoop-2.0.4-alpha.tar.gz1234tar zxvf sqoop-1.4.6.bin__hadoop-2.0.4-alpha.tar.gzmv sqoop-1.4.6.bin__hadoop-2.0.4-alpha /env/cd /e">
+<meta property="og:updated_time" content="2016-09-01T01:36:51.478Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Typing Test">
-<meta name="twitter:description" content="Typing Test">
+<meta name="twitter:title" content="CentOS下安装Sqoop">
+<meta name="twitter:description" content="系统：CentOS 6.5桌面版版本：Sqoop 1.4.6
+
+下载并解压下载Sqoop，这里下载的版本是sqoop-1.4.6.bin__hadoop-2.0.4-alpha.tar.gz1234tar zxvf sqoop-1.4.6.bin__hadoop-2.0.4-alpha.tar.gzmv sqoop-1.4.6.bin__hadoop-2.0.4-alpha /env/cd /e">
 
 
 
@@ -117,7 +123,7 @@
   };
 </script>
 
-  <title> Typing Test | Good Luck & Have Fun </title>
+  <title> CentOS下安装Sqoop | Good Luck & Have Fun </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -247,7 +253,7 @@
             
             
               
-                Typing Test
+                CentOS下安装Sqoop
               
             
           </h1>
@@ -259,8 +265,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-06-22T00:00:00+08:00" content="2016-06-22">
-              2016-06-22
+            <time itemprop="dateCreated" datetime="2016-08-31T17:30:00+08:00" content="2016-08-31">
+              2016-08-31
             </time>
           </span>
 
@@ -273,8 +279,8 @@
               <span class="post-meta-item-text">分类于</span>
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/Game/" itemprop="url" rel="index">
-                    <span itemprop="name">Game</span>
+                  <a href="/categories/Linux/" itemprop="url" rel="index">
+                    <span itemprop="name">Linux</span>
                   </a>
                 </span>
 
@@ -306,217 +312,17 @@
       
 
       
-        <!DOCTYPE html>
-<html>
-  <head>
-	<script src="/scripts/jquery-1.11.3.min.js"></script>
-	<script src="/scripts/validate.js"></script>
-	<script src="/scripts/word.js"></script>
-	<style>
-		.inputText{
-			font-size: 20px;
-			background-color: white;
-			border: #DDDDDD 1px solid;
-			border-radius: 3px;
-			padding: 10px;
-		}
-		.speedText{
-			line-height: 24px;
-			font-size: 16px;
-			background-color: #D9EDF7;
-			border-radius: 3px;
-			padding: 15px;
-		}
-		.text-green{
-			color: #3c763d;
-		}
-		.text-red{
-			color: #a94442;
-		}
-		.text-current{
-			background-color: #DDDDDD;
-			border-radius: 3px;
-		}
-		label{
-			font-weight: normal;
-		}
-		input{
-			height: 34px;
-			padding: 5px;
-			font-size: 18px;
-			color: #555;
-			background-color: #fff;
-			border: 1px solid #ccc;
-		}
-		button{
-			height: 46px;
-			padding: 5px;
-			font-size: 18px;
-			color: #fff;
-			background-color: #337AB7;
-			border: 1px solid #2E6DA4;
-		}
-		button:hover{
-			background-color: #286090;
-		}
-		select{
-			height: 46px;
-			padding: 5px;
-			font-size: 18px;
-			color: #555;
-			background-color: #fff;
-			border: 1px solid #ccc;
-		}
-	</style>
-  </head>
-
-  <body>
-    <h3>Start a test</h3>
-    <div>
-        <div id="inputText" class="inputText">
-            <label class="text-green"></label>
-            <label class="text-current">Once</label>
-            <label>upon a time a little girl tried to make a living by selling matches in the street. It was New Year's Eve and the snowed streets were deserted. From brightly lit windows came the tinkle of laughter and the sound of singing. People were getting ready to bring in the New Year. But the poor little match seller sat sadly beside the fountain. Her ragged dress and worn shawl did not keep out the cold and she tried to keep her bare feet from touching the frozen ground. </label>
-        </div><br>
-        <div>
-            <input id="inputWord" type="text" style="width:50%;"> 
-            <button id="restartButton">Restart</button> 
-            <select id="wordRange" title="Word Range">
-                <option value="200">200</option>
-                <option value="500">500</option>
-                <option value="1000">1000</option>
-                <option value="2000">2000</option>
-            </select>
-        </div><br>
-        <div class="speedText">
-            Time: <label id="useTime">0</label>s<br>
-            Word: <label id="successWord" class="text-green">0</label>/<label id="totalWord">0</label><br>
-            Speed: <label id="speedCount">0</label>wpm<br>
-            Type: <label id="successType" class="text-green">0</label>/<label id="totalType">0</label><br>
-            Speed: <label id="speedCount2">0</label>kpm<br>
-            Accuracy: <label id="accuracy">0</label>%<br>
-        </div>
-    </div>
-	  
-    <script>
-        var start = 0;
-        var totalCount = 0;
-        var successCount = 0;
-        var totalTypeCount = 0;
-        var successTypeCount = 0;
-        var time = new Date();
-        var successText = $($("#inputText").children("label")[0]);
-        var currentText = $($("#inputText").children("label")[1]);
-        var previewText = $($("#inputText").children("label")[2]);
-        var inputWord = $("#inputWord");
-        var useTime = $("#useTime");
-        var successWord = $("#successWord");
-        var totalWord = $("#totalWord");
-        var speedCount = $("#speedCount");
-        var successType = $("#successType");
-        var totalType = $("#totalType");
-        var speedCount2 = $("#speedCount2");
-        var accuracy = $("#accuracy");
-        $("#restartButton").bind("click", restart);
-        inputWord.keydown(checkWord).keyup(typeCount);
-        setInterval(updateSpeed, 50);
-
-        function checkWord(e){
-			if (e.keyCode == 27) {
-                restart();
-            } else if(start == 1) {
-			} else if(start == 0){
-                time = new Date();
-                start++;
-            }
-            else return;
-            
-            if(e.keyCode == 32){
-                var word = Trim(inputWord[0].value);
-                if(word == currentText.html()){
-                    successCount++;
-                    totalCount++;
-                    successText.append(currentText.html() + " ");
-                }else{
-                    totalCount++;
-                    successText.append("<label class='text-red'>" + currentText.html() + "</label> ");
-                }
-                inputWord[0].value = "";
-                currentText.css("background-color", "#DDDDDD");
-                
-                var str = previewText.html();
-                if(f_check_null(str)) {
-                    updateSpeed();
-                    start = 2;
-                }
-                previewText.html(str.substring(str.indexOf(" ") + 1));
-                currentText.html(str.substring(0, str.indexOf(" ")));
-                return false;
-            }
-        }
-        
-        function typeCount(e){
-            var word = Trim(inputWord[0].value);
-            if(start==1 && f_check_ZhOrNumOrLettAll(String.fromCharCode(e.keyCode))){
-                if(word[word.length - 1] == currentText.html()[word.length - 1]){
-                    successTypeCount++;
-                }
-                totalTypeCount++;
-            }
-            if(word == currentText.html().substring(0, word.length)){
-                currentText.css("background-color", "#DDDDDD");
-            }
-            else{
-                currentText.css("background-color", "#FFCCCC");
-            }
-        }
-        
-        function updateSpeed(){
-            if(start == 1){
-                var timeCount = new Date() - time;
-                useTime.html((timeCount / 1000).toFixed(1));
-                successWord.html(successCount);
-                totalWord.html(totalCount);
-                successType.html(successTypeCount);
-                totalType.html(totalTypeCount);
-                speedCount.html((60000*successCount/timeCount).toFixed(0));
-                speedCount2.html((60000*successTypeCount/timeCount).toFixed(0));
-                accuracy.html(totalTypeCount==0?100:(successTypeCount/totalTypeCount*100).toFixed(0));
-            }
-        }
-        
-        function restart(){
-            start = 0;
-            totalCount = 0;
-            successCount = 0;
-            totalTypeCount = 0;
-            successTypeCount = 0;
-            useTime.html(0);
-            successWord.html(0);
-            totalWord.html(0);
-            successType.html(0);
-            totalType.html(0);
-            speedCount.html(0);
-            speedCount2.html(0);
-            accuracy.html(0);
-            successText.html("");
-            currentText.html(Trim(getWord(1))).css("background-color", "#DDDDDD");
-            previewText.html(getWord(99));
-            inputWord[0].value = "";
-            inputWord.select().focus();
-        }
-        
-        function getWord(n){
-            var range = $("#wordRange")[0].value;
-            var str = "";
-            for(var i = 0; i < n; i++){
-                str += wordJson[(Math.random() * range).toFixed(0)] + " ";
-            }
-            return str;
-        }
-    </script>
-  </body>
-</html>
+        <blockquote>
+<p>系统：CentOS 6.5桌面版<br>版本：Sqoop 1.4.6</p>
+</blockquote>
+<h2 id="下载并解压"><a href="#下载并解压" class="headerlink" title="下载并解压"></a>下载并解压</h2><p>下载<a href="http://sqoop.apache.org/" target="_blank" rel="external">Sqoop</a>，这里下载的版本是sqoop-1.4.6.bin__hadoop-2.0.4-alpha.tar.gz<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">tar zxvf sqoop-1.4.6.bin__hadoop-2.0.4-alpha.tar.gz</span><br><span class="line">mv sqoop-1.4.6.bin__hadoop-2.0.4-alpha /env/</span><br><span class="line">cd /env</span><br><span class="line">ln -s sqoop-1.4.6.bin__hadoop-2.0.4-alpha sqoop</span><br></pre></td></tr></table></figure></p>
+<a id="more"></a>
+<h2 id="配置环境变量"><a href="#配置环境变量" class="headerlink" title="配置环境变量"></a>配置环境变量</h2><p>编辑/etc/profile，加入sqoop的环境变量<br><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">export</span> SQOOP_HOME=/env/sqoop</span><br><span class="line"><span class="built_in">export</span> PATH=<span class="variable">$SQOOP_HOME</span>/bin:<span class="variable">$PATH</span></span><br></pre></td></tr></table></figure></p>
+<h2 id="编辑配置文件"><a href="#编辑配置文件" class="headerlink" title="编辑配置文件"></a>编辑配置文件</h2><p>编辑sqoop目录下的配置文件<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">cd /env/sqoop/conf</span><br><span class="line">cp sqoop-env-template.sh sqoop-env.sh</span><br><span class="line">vim sqoop-env.sh</span><br></pre></td></tr></table></figure></p>
+<p>加入相应的目录，注意hadoop-common和hadoop-mapred都是填hadoop的安装目录<br><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">export</span> HADOOP_COMMON_HOME=/env/hadoop</span><br><span class="line"><span class="built_in">export</span> HADOOP_MAPRED_HOME=/env/hadoop</span><br><span class="line"><span class="built_in">export</span> HBASE_HOME=/env/hbase</span><br><span class="line"><span class="built_in">export</span> HIVE_HOME=/env/hive</span><br></pre></td></tr></table></figure></p>
+<h2 id="添加数据库驱动"><a href="#添加数据库驱动" class="headerlink" title="添加数据库驱动"></a>添加数据库驱动</h2><p>根据你的数据库，下载相应的驱动jar包放入sqoop/lib目录下，这里用的是<a href="https://www.microsoft.com/zh-cn/download/details.aspx?id=21599" target="_blank" rel="external">sqlserver</a><br>附上下载连接<a href="https://download.microsoft.com/download/3/D/4/3D4DBEAB-B3D2-41DF-87BC-0FCA33CAAB5C/2052/sqljdbc_3.0.1301.101_chs.tar.gz" target="_blank" rel="external">sqlserver</a><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">tar zxvf sqljdbc_3.0.1301.101_chs.tar.gz</span><br><span class="line">cp sqljdbc_3.0/chs/sqljdbc4.jar /env/sqoop/lib</span><br></pre></td></tr></table></figure></p>
+<h2 id="测试"><a href="#测试" class="headerlink" title="测试"></a>测试</h2><p>查看数据库<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sqoop list-databases --connect &apos;jdbc:sqlserver://xxx.xxx.xxx.xxx:xxx&apos; --username &apos;xxx&apos; --password &apos;xxx&apos;</span><br></pre></td></tr></table></figure></p>
+<h2 id="从数据库导入到hdfs"><a href="#从数据库导入到hdfs" class="headerlink" title="从数据库导入到hdfs"></a>从数据库导入到hdfs</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sqoop import --connect &apos;jdbc:sqlserver://xxx.xxx.xxx.xxx:xxx;database=xxx&apos; --username &apos;xxx&apos; --password &apos;xxx&apos; --query &apos;select xxxxx WHERE $CONDITIONS&apos; --hive-import --hive-table &#123;hive表&#125; --hive-overwrite --target-dir /xxx/xxx --split-by &#123;主键&#125;</span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -538,7 +344,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/Fun/" rel="tag">#Fun</a>
+            <a href="/tags/Linux/" rel="tag">#Linux</a>
+          
+            <a href="/tags/sqoop/" rel="tag">#sqoop</a>
           
         </div>
       
@@ -547,17 +355,13 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/201606/hello-world/" rel="next" title="Hello World">
-                <i class="fa fa-chevron-left"></i> Hello World
+              <a href="/201608/t-rex/" rel="next" title="T-Rex Runner">
+                <i class="fa fa-chevron-left"></i> T-Rex Runner
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/201606/hexo-init/" rel="prev" title="使用Hexo建立博客">
-                使用Hexo建立博客 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -682,7 +486,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">1.</span> <span class="nav-text">Start a test</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#下载并解压"><span class="nav-number">1.</span> <span class="nav-text">下载并解压</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#配置环境变量"><span class="nav-number">2.</span> <span class="nav-text">配置环境变量</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#编辑配置文件"><span class="nav-number">3.</span> <span class="nav-text">编辑配置文件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#添加数据库驱动"><span class="nav-number">4.</span> <span class="nav-text">添加数据库驱动</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#测试"><span class="nav-number">5.</span> <span class="nav-text">测试</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#从数据库导入到hdfs"><span class="nav-number">6.</span> <span class="nav-text">从数据库导入到hdfs</span></a></li></ol></div>
             
           </div>
         </section>
