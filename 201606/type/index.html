@@ -96,7 +96,7 @@
 <meta property="og:url" content="http://localhost:4000/201606/type/index.html">
 <meta property="og:site_name" content="Good Luck & Have Fun">
 <meta property="og:description" content="Typing Test">
-<meta property="og:updated_time" content="2016-12-30T11:09:34.141Z">
+<meta property="og:updated_time" content="2017-01-03T01:34:41.835Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Typing Test">
 <meta name="twitter:description" content="Typing Test">
@@ -418,6 +418,7 @@
         var speedCount2 = $("#speedCount2");
         var accuracy = $("#accuracy");
         $("#restartButton").bind("click", restart);
+		inputWord.select().focus();
         inputWord.keydown(checkWord).keyup(typeCount);
         setInterval(updateSpeed, 50);
 
@@ -701,7 +702,7 @@
         <div class="copyright" >
   
   &copy; 
-  <span itemprop="copyrightYear">2016</span>
+  <span itemprop="copyrightYear">2017</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>
