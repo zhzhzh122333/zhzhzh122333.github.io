@@ -90,16 +90,16 @@
 
 
 
-<meta name="description" content="Run for your life">
+<meta name="description" content="A beautiful javascript plugin">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Running">
-<meta property="og:url" content="http://localhost:4000/201607/run/index.html">
+<meta property="og:title" content="Particles">
+<meta property="og:url" content="http://localhost:4000/201701/particles/index.html">
 <meta property="og:site_name" content="Good Luck & Have Fun">
-<meta property="og:description" content="Run for your life">
-<meta property="og:updated_time" content="2016-07-25T09:30:37.526Z">
+<meta property="og:description" content="A beautiful javascript plugin">
+<meta property="og:updated_time" content="2017-01-13T03:04:25.842Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Running">
-<meta name="twitter:description" content="Run for your life">
+<meta name="twitter:title" content="Particles">
+<meta name="twitter:description" content="A beautiful javascript plugin">
 
 
 
@@ -117,7 +117,7 @@
   };
 </script>
 
-  <title> Running | Good Luck & Have Fun </title>
+  <title> Particles | Good Luck & Have Fun </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -247,7 +247,7 @@
             
             
               
-                Running
+                Particles
               
             
           </h1>
@@ -259,8 +259,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-07-21T00:00:00+08:00" content="2016-07-21">
-              2016-07-21
+            <time itemprop="dateCreated" datetime="2017-01-09T00:00:00+08:00" content="2017-01-09">
+              2017-01-09
             </time>
           </span>
 
@@ -307,57 +307,390 @@
 
       
         <!DOCTYPE html>
-<body onload="run()">
-    <div id="runBox"></div>
-    <div id="runBottom"></div>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<style>
+  .particles-container {
+    background-color: #ec3eff;
+    height: 350px;
+  }
+</style>
+<body>
+<div class="particles-container">
+  <select id="style-select">
+    <option value="1">style 1</option>
+    <option value="2">style 2</option>
+  </select>
+  <div id="particles-js"></div>
+</div>
 </body>
+<script src="/scripts/jquery-1.11.1.min.js"></script>
+<script src="/scripts/particles/particles.min.js"></script>
 <script>
-    var n = 100;
-    var delayTime = 50;
-    var word = "run";
-    var isRunning = true;
-    var currentRun = 0;
-    var totalRun = 1000;
-    var runModel = "g";
-    var blank = getBlank();
-    var runBox = document.getElementById("runBox");
-    var runBottom = document.getElementById("runBottom");
-    
-    function getBlank() {
-        var blank = [];
-        blank[0] = "";
-        for (var i = 1; i <= n; i++) {
-            blank[i] = blank[i-1] + "&nbsp;";
+  var particlesJson = {
+    'default': {
+      particles: {
+        number: {
+          value: 400,
+          density: {
+            enable: true,
+            value_area: 800
+          }
+        },
+        color: {
+          value: '#fff'
+        },
+        shape: {
+          type: 'circle',
+          stroke: {
+            width: 0,
+            color: '#ff0000'
+          },
+          polygon: {
+            nb_sides: 5
+          },
+          image: {
+            src: '',
+            width: 100,
+            height: 100
+          }
+        },
+        opacity: {
+          value: 1,
+          random: false,
+          anim: {
+            enable: false,
+            speed: 2,
+            opacity_min: 0,
+            sync: false
+          }
+        },
+        size: {
+          value: 20,
+          random: false,
+          anim: {
+            enable: false,
+            speed: 20,
+            size_min: 0,
+            sync: false
+          }
+        },
+        line_linked: {
+          enable: true,
+          distance: 100,
+          color: '#fff',
+          opacity: 1,
+          width: 1
+        },
+        move: {
+          enable: true,
+          speed: 2,
+          direction: 'none',
+          random: false,
+          straight: false,
+          out_mode: 'out',
+          bounce: false,
+          attract: {
+            enable: false,
+            rotateX: 3000,
+            rotateY: 3000
+          }
+        },
+        array: []
+      },
+      interactivity: {
+        detect_on: 'canvas',
+        events: {
+          onhover: {
+            enable: true,
+            mode: 'grab'
+          },
+          onclick: {
+            enable: true,
+            mode: 'push'
+          },
+          resize: true
+        },
+        modes: {
+          grab:{
+            distance: 100,
+            line_linked:{
+              opacity: 1
+            }
+          },
+          bubble:{
+            distance: 200,
+            size: 80,
+            duration: 0.4
+          },
+          repulse:{
+            distance: 200,
+            duration: 0.4
+          },
+          push:{
+            particles_nb: 4
+          },
+          remove:{
+            particles_nb: 2
+          }
+        },
+        mouse:{}
+      },
+      retina_detect: false,
+      fn: {
+        interact: {},
+        modes: {},
+        vendors:{}
+      },
+      tmp: {}
+    },
+    'style1': {
+      "particles": {
+        "number": {
+          "value": 110,
+          "density": {
+            "enable": true,
+            "value_area": 800
+          }
+        },
+        "color": {
+          "value": "#ffffff"
+        },
+        "shape": {
+          "type": "circle",
+          "stroke": {
+            "width": 0,
+            "color": "#000000"
+          },
+          "polygon": {
+            "nb_sides": 5
+          },
+          "image": {
+            "src": "img/github.svg",
+            "width": 100,
+            "height": 100
+          }
+        },
+        "opacity": {
+          "value": 0.5,
+          "random": false,
+          "anim": {
+            "enable": false,
+            "speed": 1,
+            "opacity_min": 0.1,
+            "sync": false
+          }
+        },
+        "size": {
+          "value": 2,
+          "random": true,
+          "anim": {
+            "enable": false,
+            "speed": 20,
+            "size_min": 0.1,
+            "sync": false
+          }
+        },
+        "line_linked": {
+          "enable": true,
+          "distance": 80,
+          "color": "#fff",
+          "opacity": 1,
+          "width": 1
+        },
+        "move": {
+          "enable": true,
+          "speed": 3,
+          "direction": "none",
+          "random": false,
+          "straight": false,
+          "out_mode": "out",
+          "attract": {
+            "enable": false,
+            "rotateX": 600,
+            "rotateY": 1200
+          }
         }
-        return blank;
-    }
-    
-    function start() {
-        isRunning = true;
-        run();
-    }
-    
-    function pause() {
-        isRunning = false;
-    }
-    
-    function run() {
-        var i = currentRun++;
-        //runBox.insertAfter(blank[i%n > n/2 ? n-i%n : i%n] + word + "<br>");
-        var label = document.createElement("label");
-        if (runModel == "s") {
-            label.innerHTML = blank[i/n%2 >= 1 ? n-i%n : i%n] + word + "<br>";
-        } else if (runModel == "g") {
-            var j = Math.sqrt(n);
-            label.innerHTML = blank[i/j%2 >= 1 ? n-Math.pow(i%j,2) : n-Math.pow(j-i%j,2)] + word + "<br>";
+      },
+      "interactivity": {
+        "detect_on": "canvas",
+        "events": {
+          "onhover": {
+            "enable": true,
+            "mode": "grab"
+          },
+          "onclick": {
+            "enable": true,
+            "mode": "push"
+          },
+          "resize": true
+        },
+        "modes": {
+          "grab": {
+            "distance": 120,
+            "line_linked": {
+              "opacity": 1
+            }
+          },
+          "bubble": {
+            "distance": 400,
+            "size": 40,
+            "duration": 2,
+            "opacity": 8,
+            "speed": 3
+          },
+          "repulse": {
+            "distance": 300
+          },
+          "push": {
+            "particles_nb": 4
+          },
+          "remove": {
+            "particles_nb": 2
+          }
         }
-        runBox.appendChild(label);
-        runBottom.scrollIntoView(false);
-        if (isRunning && currentRun <= totalRun) {
-            setTimeout("run()", delayTime);
+      },
+      "retina_detect": true,
+      "config_demo": {
+        "hide_card": false,
+        "background_color": "#b61924",
+        "background_image": "",
+        "background_position": "50% 50%",
+        "background_repeat": "no-repeat",
+        "background_size": "cover"
+      }
+    },
+    'style2': {
+      "particles": {
+        "number": {
+          "value": 80,
+          "density": {
+            "enable": true,
+            "value_area": 800
+          }
+        },
+        "color": {
+          "value": "#ffffff"
+        },
+        "shape": {
+          "type": "circle",
+          "stroke": {
+            "width": 0,
+            "color": "#000000"
+          },
+          "polygon": {
+            "nb_sides": 5
+          },
+          "image": {
+            "src": "img/github.svg",
+            "width": 100,
+            "height": 100
+          }
+        },
+        "opacity": {
+          "value": 0.5,
+          "random": false,
+          "anim": {
+            "enable": false,
+            "speed": 1,
+            "opacity_min": 0.1,
+            "sync": false
+          }
+        },
+        "size": {
+          "value": 5,
+          "random": true,
+          "anim": {
+            "enable": false,
+            "speed": 40,
+            "size_min": 0.1,
+            "sync": false
+          }
+        },
+        "line_linked": {
+          "enable": true,
+          "distance": 150,
+          "color": "#ffffff",
+          "opacity": 0.4,
+          "width": 1
+        },
+        "move": {
+          "enable": true,
+          "speed": 6,
+          "direction": "none",
+          "random": false,
+          "straight": false,
+          "out_mode": "out",
+          "attract": {
+            "enable": false,
+            "rotateX": 600,
+            "rotateY": 1200
+          }
         }
+      },
+      "interactivity": {
+        "detect_on": "canvas",
+        "events": {
+          "onhover": {
+            "enable": true,
+            "mode": "repulse"
+          },
+          "onclick": {
+            "enable": true,
+            "mode": "push"
+          },
+          "resize": true
+        },
+        "modes": {
+          "grab": {
+            "distance": 400,
+            "line_linked": {
+              "opacity": 1
+            }
+          },
+          "bubble": {
+            "distance": 400,
+            "size": 40,
+            "duration": 2,
+            "opacity": 8,
+            "speed": 3
+          },
+          "repulse": {
+            "distance": 200
+          },
+          "push": {
+            "particles_nb": 4
+          },
+          "remove": {
+            "particles_nb": 2
+          }
+        }
+      },
+      "retina_detect": true,
+      "config_demo": {
+        "hide_card": false,
+        "background_color": "#b61924",
+        "background_image": "",
+        "background_position": "50% 50%",
+        "background_repeat": "no-repeat",
+        "background_size": "cover"
+      }
     }
+  };
+  particlesJS('particles-js', particlesJson.style1);
+
+  $('#style-select').bind('change', function() {
+    if (this.selectedIndex == 1) {
+      particlesJS('particles-js', particlesJson.style2);
+    } else {
+      particlesJS('particles-js', particlesJson.style1);
+    }
+  });
 </script>
+</html>
       
     </div>
 
@@ -387,16 +720,16 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/201606/mysql-init/" rel="next" title="CentOS下安装MySQL">
-                <i class="fa fa-chevron-left"></i> CentOS下安装MySQL
+              <a href="/201608/sqoop-install/" rel="next" title="CentOS下安装Sqoop">
+                <i class="fa fa-chevron-left"></i> CentOS下安装Sqoop
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/201608/t-rex/" rel="prev" title="T-Rex Runner">
-                T-Rex Runner <i class="fa fa-chevron-right"></i>
+              <a href="/201701/badapple/" rel="prev" title="Bad Apple">
+                Bad Apple <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
