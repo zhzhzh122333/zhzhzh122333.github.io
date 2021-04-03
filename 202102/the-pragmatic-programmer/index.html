@@ -29,7 +29,7 @@
 <meta property="og:description" content="注重实效的程序员有哪些特征 早期的采纳者&#x2F;快速的改编者。你具有技术和技巧上的直觉，你喜爱实验各种事物。给你一样新东西，你很快就能把握它，并把它与你的知识的其余部分结合在一起。你的自信出自经验。 好奇。你喜欢提问。那很漂亮——你是怎么做的？你用那个库时有问题吗？……你是收集小知识的林鼠，每一条小知识都可能会影响今后几年里的某项决策。 批判的思考者。你不会不首先抓住事实而照搬别人的说法。当同事说“因为">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2021-02-28T03:37:21.000Z">
-<meta property="article:modified_time" content="2021-03-14T05:34:04.788Z">
+<meta property="article:modified_time" content="2021-04-03T13:14:51.664Z">
 <meta property="article:author" content="zhzhzh122333">
 <meta property="article:tag" content="Book">
 <meta property="article:tag" content="Learning">
@@ -191,7 +191,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-03-14 13:34:04" itemprop="dateModified" datetime="2021-03-14T13:34:04+08:00">2021-03-14</time>
+                <time title="修改时间：2021-04-03 21:14:51" itemprop="dateModified" datetime="2021-04-03T21:14:51+08:00">2021-04-03</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -261,6 +261,28 @@
 <blockquote>
 <p><em>Tips：对于代码中的注释，要把低级的知识放在代码中，它属于哪里；把注释留给其他的高级说明。否则，我们就是在重复知识，而每一次改变都意味着即要改变代码，也要改变注释。注释将不可避免地变得过时，而不可信任的注释比完全没有注释更糟。</em></p>
 </blockquote>
+<h2 id="曳光弹"><a href="#曳光弹" class="headerlink" title="曳光弹"></a>曳光弹</h2><p>在开发新的项目，特别是当你构建从未构建过的东西时，相比于传统的先编写模块再进行组装的开发模式，使用曳光弹的模式往往更加行之有效。<br><strong>Use Tracer Bullets to Find the Target——用曳光弹找到目标。</strong><br>所谓曳光弹的开发模式，就是要找到某种东西，让我们能快速、直观和可重复地从需求出发，满足最终系统的某个方面要求。曳光开发与项目永不会结束的理念是一致的：总有改动需要完成，总有功能需要增加，这是一个渐进的过程。曳光代码方法有许多优点：</p>
+<ul>
+<li><strong>用户能够及早看到能工作的东西。</strong></li>
+<li><strong>开发者构建了一个他们能在其中工作的结构。</strong></li>
+<li><strong>你有了一个集成平台。</strong></li>
+<li><strong>你有了可用于演示的东西。</strong></li>
+<li><strong>你将能够感觉到工作进展。</strong></li>
+</ul>
+<p><strong>曳光弹并非总能击中目标。</strong>曳光代码同样也并非总是符合需求，但是它简单、惯性更小，这就意味着改变它会更容易、更迅速，你能够花费较少的代价、更为迅速地生成新的、更为准确的版本。<br><strong>曳光代码跟原型制作不一样。</strong>原型制作生成的是用过就扔的代码，但曳光代码不是，你编写它，是为了保留它。曳光代码虽然功能简单，但却是完整的，并且构成了最终系统骨架的一部分。你可以把原型制作视为在第一发曳光弹发射之前所进行的侦察和情报收集工作。</p>
+<h2 id="估算"><a href="#估算" class="headerlink" title="估算"></a>估算</h2><p>通过学习估算，将此技能发展到你对事物的数量级有直觉的程度，你就能确定它们的可行性，并且加深你对程序所处的世界的理解。<br><strong>Estimate to Avoid Surprises——估算，以避免发生意外。</strong><br><strong>理解提问内容。</strong>任何估算的第一步都是建立对提问内容的理解，尝试思考以下两个问题：</p>
+<ul>
+<li><strong>多准确才能足够准确？</strong>首先要明确解答问题的语境，是需要高度的准确性，还是一个近似值即可。其次，要选择合适的精确度单位，时长2周以内用天，3~8周用周，8周以上单位用月会比较合适。</li>
+<li><strong>问题域的范围是什么？</strong>养成在开始猜想前先思考范围的习惯，找出隐含在问题中的各种假设条件，你选择的范围将会成为你解答中的一部分，可以在回答中声明这些假设条件。</li>
+</ul>
+<p><strong>估算来自哪里。</strong>一个简单确相当有效的估算诀窍：尝试去问已经做过这件事情的人，看看他们的问题是怎么解决的。尽管案例不大可能完全相同，但通常也会有一些值得借鉴的经验。<br><strong>建立系统的模型。</strong>这是估算有趣的部分，根据你对所提问题的理解，建立粗略、就绪的思维模型骨架：</p>
+<ul>
+<li><strong>建立模型。</strong>对于一个项目，模型可以是你的组织在开发过程中所用的步骤、以及系统的实现方式的非常粗略的图景。但努力建模也许只能带来轻微的精确度提高，需要凭借你的经验做好权衡。</li>
+<li><strong>把模型分解为组件。</strong>有了模型你就可以把它分解为组件。你需要找出描述这些组件怎样交互的数学规则，通常就是找出每个组件所包含的参数及其影响。</li>
+<li><strong>给每个参数指定值。</strong>找出哪些参数对结果的影响最大，用于乘除运算的参数通常比常数影响更大。你应该采用合理的方式计算这些关键参数，尽量可能让它们更加正确。</li>
+<li><strong>计算答案。</strong>用Excel多次计算结果，找出真正主导模型的参数，根据这些参数表述你的答案。假如你得到一些看起来很奇怪的答案，尝试反思是否是问题或者模型的理解上有错误。</li>
+</ul>
+<p><strong>追踪你的估算能力。</strong>记录你的估算，从而让你看到自己接近正确答案的程度。如果结果非常好，会帮助你建立信心。如果结果证明估算错了，也要设法找出原因，这会使你的下一次估算变得更好。<br><strong>估算项目进度。</strong>对大型项目进行估算时，按照【检查风险】&gt;&gt;【分析风险】&gt;&gt;【设计、实现、集成】&gt;&gt;【向用户确认】的步骤进行迭代，每次迭代后提升你对迭代内容的理解，逐渐掌握项目的整体进度。<br><strong>我等会再答复你。</strong>当你在被要求进行评估时，说这句话。放慢评估速度，并花一点时间仔细检查评估步骤，基本上都能得到更好的结果，随意评估的结果可能会带来意外的麻烦。</p>
 
     </div>
 
@@ -343,7 +365,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#注重实效的程序员有哪些特征"><span class="nav-number">1.</span> <span class="nav-text">注重实效的程序员有哪些特征</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#我的源码让猫吃了"><span class="nav-number">2.</span> <span class="nav-text">我的源码让猫吃了</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#软件的熵"><span class="nav-number">3.</span> <span class="nav-text">软件的熵</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#交流"><span class="nav-number">4.</span> <span class="nav-text">交流</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#重复的危害"><span class="nav-number">5.</span> <span class="nav-text">重复的危害</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#注重实效的程序员有哪些特征"><span class="nav-number">1.</span> <span class="nav-text">注重实效的程序员有哪些特征</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#我的源码让猫吃了"><span class="nav-number">2.</span> <span class="nav-text">我的源码让猫吃了</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#软件的熵"><span class="nav-number">3.</span> <span class="nav-text">软件的熵</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#交流"><span class="nav-number">4.</span> <span class="nav-text">交流</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#重复的危害"><span class="nav-number">5.</span> <span class="nav-text">重复的危害</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#曳光弹"><span class="nav-number">6.</span> <span class="nav-text">曳光弹</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#估算"><span class="nav-number">7.</span> <span class="nav-text">估算</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
