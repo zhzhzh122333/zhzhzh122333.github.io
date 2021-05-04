@@ -29,7 +29,7 @@
 <meta property="og:description" content="注重实效的程序员有哪些特征 早期的采纳者&#x2F;快速的改编者。你具有技术和技巧上的直觉，你喜爱实验各种事物。给你一样新东西，你很快就能把握它，并把它与你的知识的其余部分结合在一起。你的自信出自经验。 好奇。你喜欢提问。那很漂亮——你是怎么做的？你用那个库时有问题吗？……你是收集小知识的林鼠，每一条小知识都可能会影响今后几年里的某项决策。 批判的思考者。你不会不首先抓住事实而照搬别人的说法。当同事说“因为">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2021-02-28T03:37:21.000Z">
-<meta property="article:modified_time" content="2021-04-03T13:14:51.664Z">
+<meta property="article:modified_time" content="2021-05-04T03:01:14.520Z">
 <meta property="article:author" content="zhzhzh122333">
 <meta property="article:tag" content="Book">
 <meta property="article:tag" content="Learning">
@@ -191,7 +191,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-04-03 21:14:51" itemprop="dateModified" datetime="2021-04-03T21:14:51+08:00">2021-04-03</time>
+                <time title="修改时间：2021-05-04 11:01:14" itemprop="dateModified" datetime="2021-05-04T11:01:14+08:00">2021-05-04</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -283,6 +283,29 @@
 <li><strong>计算答案。</strong>用Excel多次计算结果，找出真正主导模型的参数，根据这些参数表述你的答案。假如你得到一些看起来很奇怪的答案，尝试反思是否是问题或者模型的理解上有错误。</li>
 </ul>
 <p><strong>追踪你的估算能力。</strong>记录你的估算，从而让你看到自己接近正确答案的程度。如果结果非常好，会帮助你建立信心。如果结果证明估算错了，也要设法找出原因，这会使你的下一次估算变得更好。<br><strong>估算项目进度。</strong>对大型项目进行估算时，按照【检查风险】&gt;&gt;【分析风险】&gt;&gt;【设计、实现、集成】&gt;&gt;【向用户确认】的步骤进行迭代，每次迭代后提升你对迭代内容的理解，逐渐掌握项目的整体进度。<br><strong>我等会再答复你。</strong>当你在被要求进行评估时，说这句话。放慢评估速度，并花一点时间仔细检查评估步骤，基本上都能得到更好的结果，随意评估的结果可能会带来意外的麻烦。</p>
+<h2 id="调试"><a href="#调试" class="headerlink" title="调试"></a>调试</h2><p>对于许多开发者，调试本身是一个感性的话题。你可能会遇到抵赖、推诿、借口甚至是无动于衷，但需要接受的事实是：调试就是解决问题，要据此发起进攻。<br><strong>Fix the Problem, Not the Blame——要修正问题，而不是发出指责。</strong><br>有些时候，对bug问责可能是工作文化的一部分。但是在技术竞技场上，你更应该关注于修正问题，而不是发出指责。Bug是你的过错还是别人的过错，这并不是很重要，因为它仍是你的问题。<br><strong>Don’t Panic——不要恐慌。</strong><br>在开始调试之前，你需要忘掉项目、客户之类的压力，放松心情，再去思考是什么造成了bug以这种方式出现。避免在“那不可能发生”的想法上浪费时间，因为很明显，那不仅可能，而且也已经发生了。目光不能只停留在眼前看到的问题，设法找出问题的根源，而不只是问题的特定表现。<br>在开始查看bug时，先确保代码能够成功编译并且没有警告。其次，要收集问题相关的所有数据，仔细观察问题报告、跟反馈者交谈，以获取足够程度的细节。一旦你认为已经知道了在发生什么，就到了找出程序认为在发生什么的时候了，常用的测试策略如下：</p>
+<ul>
+<li><strong>重现bug。</strong>开始修正bug的最佳途径是让其重现，尽量隔离显示出bug的环境，让重现变得简单。</li>
+<li><strong>使数据可视化。</strong>认识程序在做什么的最佳途径是查看它操作的数据，借助调试器、绘图工具实现。</li>
+<li><strong>跟踪。</strong>观察程序或数据随时间的状态变化，尤其是一些涉及并发、实时、事件的系统。</li>
+<li><strong>变量的邻居。</strong>如果检查到一个坏变量，可以查看这个变量周围的内存，这常常能带给你一些线索。</li>
+<li><strong>向别人解释。</strong>通过这种的方式，明确陈述那些自己想当然的事情，发现隐含的假定条件。</li>
+</ul>
+<p><strong>“Select” Isn’t Broken——“Select”没有问题。</strong><br>Bug有可能存在于系统、编译器、数据库、或是第三方产品中，但这不应该是你的第一想法。大多数情况下，bug存在于正在开发的应用代码中。你所做的改动很可能是导致问题的原因，尽管有时候看起来毫无关联，但被改动的东西可能在你的控制之外，直接或间接地破坏了之前正确的代码。如果无法定位问题，可以使用二分查找法，逐渐缩小范围直到最终确定问题所在。</p>
+<h2 id="何时使用异常"><a href="#何时使用异常" class="headerlink" title="何时使用异常"></a>何时使用异常</h2><p>异常应保留给意外事件，而不是作为程序正常流程的一部分使用。假设移走所有的异常处理器，代码就不能正常工作了，那么也许异常就被使用在了非异常的情形中。<br><strong>Use Exceptions for Exceptional Problems——将异常用于异常的问题。</strong><br>异常表示即时的、非局部的控制转移。如果把异常作为正常处理流程的一部分去使用，将会破坏封装，导致调用方和被调用方被更加紧密的耦合在一起，并降低代码的可读性和可维护性。<br>另一种处理异常的方式是使用错误处理器，可用于代替异常，或者与异常一起使用。把对象包装在一个实现了异常处理器接口的类中，当错误发生时处理器的方法会被调用。</p>
+<h2 id="解耦与迪米特法则"><a href="#解耦与迪米特法则" class="headerlink" title="解耦与迪米特法则"></a>解耦与迪米特法则</h2><p><strong>减少耦合：</strong>把代码组织成最小组织单位（模块），并限制它们之间的交互。一个提供特定服务的对象需要替调用方完成该服务，而不是返回一个第三方对象，调用方必须对其加以处理才能获得所需服务。<br><strong>迪米特法则：</strong>只与你的直接朋友交谈，不跟“陌生人”说话。其含义是，如果两个软件实体无须直接通信，那么就不应当发生直接的相互调用，可以通过第三方转发该调用。<br><strong>Minimize Coupling Between Modules——使模块之间的耦合减至最少。</strong><br>使用迪米特法则能够帮助我们将模块之间的耦合减至最少，使你的代码适应性更好、更健壮。但也意味着你将会编写大量包装方法，这些会带来额外的运行时代价和空间开销。与任何技术一样，你必须平衡应用的各种正面和负面因素。如果模块之间的耦合能够带来重大的性能改进，并且能够被大家所接受，那这样的设计就没有问题。</p>
+<h2 id="元数据设计"><a href="#元数据设计" class="headerlink" title="元数据设计"></a>元数据设计</h2><p>元数据通常指那些对应用进行描述的数据——应用该怎样运行、它应该使用什么资源等等。在典型情况下，元数据在运行时，而不是编译时被访问和使用。<br>使用元数据可以让我们的系统变得高度可配置，更容易适应变化。但我们不只是想把元数据用于简单的偏好。我们想要尽可能多的通过元数据配置和驱动应用。<br><strong>Put Abstractions in Code, Details in Metadata——把抽象放进代码，细节放进元数据。</strong><br>我们的目标是以声明方式思考（规定要做什么，而不是怎么做），并创建高度灵活和可适应的程序。通常的做法是为一般情况编写程序，把具体情况放在别处（编译的代码库之外），这样做的好处：</p>
+<ul>
+<li>解除设计中的耦合，从而带来更灵活、可适应性更好的程序。</li>
+<li>通过推迟细节处理，创建更健壮、更抽象的设计。</li>
+<li>无需重新编译应用，就可以对其进行定制。</li>
+</ul>
+<h2 id="时间耦合"><a href="#时间耦合" class="headerlink" title="时间耦合"></a>时间耦合</h2><p>通过允许并发和解除次序依赖两种方式减少时间耦合，可以获得更好的灵活性，并减少工作流、架构、设计和部署等开发领域中的时间依赖。</p>
+<ul>
+<li><strong>分析工作流，改善并发性。</strong>使用UML活动图之类的表示法来对工作流进行建模和分析，找出本来可以但却没有并行执行的动作，使并行度最大化。</li>
+<li><strong>用服务进行设计。</strong>使用合理的系统架构减少不同组件在时间上的依赖，例如，使用消息队列+服务的设计可以让一个组件在时间上解除了与其他组件的耦合。</li>
+<li><strong>总是为并发进行设计。</strong>保护全局变量、更简洁的接口、设计支持并发的架构，在设计之初就应该考虑并发问题，以提高系统的可伸缩性和性能。</li>
+</ul>
 
     </div>
 
@@ -365,7 +388,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#注重实效的程序员有哪些特征"><span class="nav-number">1.</span> <span class="nav-text">注重实效的程序员有哪些特征</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#我的源码让猫吃了"><span class="nav-number">2.</span> <span class="nav-text">我的源码让猫吃了</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#软件的熵"><span class="nav-number">3.</span> <span class="nav-text">软件的熵</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#交流"><span class="nav-number">4.</span> <span class="nav-text">交流</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#重复的危害"><span class="nav-number">5.</span> <span class="nav-text">重复的危害</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#曳光弹"><span class="nav-number">6.</span> <span class="nav-text">曳光弹</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#估算"><span class="nav-number">7.</span> <span class="nav-text">估算</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#注重实效的程序员有哪些特征"><span class="nav-number">1.</span> <span class="nav-text">注重实效的程序员有哪些特征</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#我的源码让猫吃了"><span class="nav-number">2.</span> <span class="nav-text">我的源码让猫吃了</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#软件的熵"><span class="nav-number">3.</span> <span class="nav-text">软件的熵</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#交流"><span class="nav-number">4.</span> <span class="nav-text">交流</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#重复的危害"><span class="nav-number">5.</span> <span class="nav-text">重复的危害</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#曳光弹"><span class="nav-number">6.</span> <span class="nav-text">曳光弹</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#估算"><span class="nav-number">7.</span> <span class="nav-text">估算</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#调试"><span class="nav-number">8.</span> <span class="nav-text">调试</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#何时使用异常"><span class="nav-number">9.</span> <span class="nav-text">何时使用异常</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#解耦与迪米特法则"><span class="nav-number">10.</span> <span class="nav-text">解耦与迪米特法则</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#元数据设计"><span class="nav-number">11.</span> <span class="nav-text">元数据设计</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#时间耦合"><span class="nav-number">12.</span> <span class="nav-text">时间耦合</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
